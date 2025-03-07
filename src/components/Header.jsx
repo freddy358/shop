@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../logo.svg";
 import PropTypes from "prop-types";
+import { FavoriteIcon } from "./FavoriteIcon";
 
 export const Header = ({ inputHandler, navbarHandler }) => {
   return (
@@ -9,7 +10,8 @@ export const Header = ({ inputHandler, navbarHandler }) => {
         <img width={50} src={logo} alt="Bastet Builders" />
       </div>
       <div>
-        <svg onClick={navbarHandler}
+        <svg
+          onClick={navbarHandler}
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
           y="0px"
@@ -17,10 +19,7 @@ export const Header = ({ inputHandler, navbarHandler }) => {
           height="45"
           viewBox="0,0,256,256"
         >
-          <g
-            fill="#413c22"
-            stroke="none"
-          >
+          <g fill="#413c22" stroke="none">
             <g transform="scale(5.33333,5.33333)">
               <path d="M6,22h36v4h-36zM6,10h36v4h-36zM6,34h36v4h-36z"></path>
             </g>
@@ -29,12 +28,14 @@ export const Header = ({ inputHandler, navbarHandler }) => {
       </div>
       <input onChange={(e) => inputHandler(e.target.value)} />
 
-      <div>Bastet Shop</div>
+      <div className="favoriteIconHeader">
+        <FavoriteIcon />
+      </div>
     </div>
   );
 };
 
 Header.propTypes = {
-        inputHandler: PropTypes.func,
-        navbarHandler: PropTypes.func
-}
+  inputHandler: PropTypes.func,
+  navbarHandler: PropTypes.func,
+};
